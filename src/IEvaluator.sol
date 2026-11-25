@@ -10,4 +10,12 @@ interface IEvaluator {
     function ex2_testErc20TickerAndSupply() external;
     function ex3_testGetToken() external;
     function ex4_testBuyToken() external;
+    function ex5_testDenyListing() external;
+    function ex6_testAllowListing() external;
+    function ex7_testDenyListing() external;
+    function ex8_testTier1Listing() external;
+    function ex9_testTier2Listing() external;
+    function ex10_allInOne() external;
+    function studentErc20(address) external view returns (address);
+    function exerciceProgression(address, uint256) external view returns (bool);
 }
