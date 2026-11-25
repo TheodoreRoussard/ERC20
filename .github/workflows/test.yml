@@ -32,4 +32,7 @@ jobs:
         run: forge build --sizes
 
       - name: Run Forge tests
+        env:
+          # Tests sur fork : il faut un RPC qui garde l'historique. Le secret est prioritaire s'il existe.
+          SEPOLIA_RPC_URL: ${{ secrets.SEPOLIA_RPC_URL || 'https://gateway.tenderly.co/public/sepolia' }}
         run: forge test -vvv

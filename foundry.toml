@@ -2,6 +2,9 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+# Version fixée pour que toutes les machines (et la CI) compilent pareil :
+# à partir de solc 0.8.36, "amsterdam" est refusé car considéré comme expérimental.
+solc = "0.8.30"
 # Sepolia est passé au hard fork Amsterdam : sans ce réglage, Forge sous-estime le gas.
 evm_version = "amsterdam"
 # AllInOne embarque le bytecode de MyToken : sans optimisation, son déploiement (21,6M gas)

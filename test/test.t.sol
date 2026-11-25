@@ -10,13 +10,13 @@ import {AllInOne} from "../src/AllInOne.sol";
 contract WorkshopTest is Test {
     IEvaluator evaluator = IEvaluator(0x05A644d6d9BBd85861ff927245aaC13bd56e6d57);
     IERC20 points = IERC20(0xe9b502e84D3E0A6deDB58aa61612DcB543D5eB42);
-    address me;
+    // Adresse publique de l'élève : les tests utilisent vm.prank, aucune clé privée n'est nécessaire
+    address constant me = 0x50318E83E291E89A4641CeC9523d7e11783000fE;
 
     function setUp() public {
         // Bloc figé juste avant le passage réel sur Sepolia (ex1 validé au bloc 11963010) :
         // les tests partent toujours d'une adresse qui n'a fait que l'ex0
         vm.createSelectFork(vm.envString("SEPOLIA_RPC_URL"), 11_963_009);
-        me = vm.addr(vm.envUint("PRIVATE_KEY"));
     }
 
     function test_ex1() public {
